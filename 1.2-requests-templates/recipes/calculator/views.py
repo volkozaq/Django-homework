@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 DATA = {
@@ -28,3 +29,45 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+def omlet_view(request):
+    serv = int(request.GET.get('servings', 1))
+    print(serv)
+    ingr = {}
+    for key, value in DATA['omlet'].items():
+        value = value * serv
+        ingr[key] = value
+    print(ingr)
+
+    context = {
+    'recipe': ingr
+    }
+    return render(request, 'calculator/index.html', context)
+
+def pasta_view(request):
+    serv = int(request.GET.get('servings', 1))
+    print(serv)
+    ingr = {}
+    for key, value in DATA['pasta'].items():
+        value = value * serv
+        ingr[key] = value
+    print(ingr)
+
+    context = {
+    'recipe': ingr
+    }
+    return render(request, 'calculator/index.html', context)
+
+def buter_view(request):
+    serv = int(request.GET.get('servings', 1))
+    print(serv)
+    ingr = {}
+    for key, value in DATA['buter'].items():
+        value = value * serv
+        ingr[key] = value
+    print(ingr)
+
+    context = {
+    'recipe': ingr
+    }
+    return render(request, 'calculator/index.html', context)
