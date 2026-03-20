@@ -1,0 +1,63 @@
+
+POST http://localhost:8000/api/advertisements/
+Content-Type: application/json
+Authorization: Token e0d3624c4719914ce16eccd2322cdbf795292a5e
+
+{
+  "title": "Шкаф IKEA, second user",
+  "description": "Срочно"
+}
+
+###
+
+POST http://localhost:8000/api/advertisements/
+Content-Type: application/json
+Authorization: Token 801bbed29ecdd554fdcb7909f4a5dbbc81bd1486
+
+{
+  "title": "Шкаф IKEA",
+  "description": "Срочно"
+}
+
+###
+
+GET http://localhost:8000/api/advertisements/?status=OPEN
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/api/advertisements/?created_at_after=2026-03-16
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:8000/api/advertisements/9/
+Content-Type: application/json
+Authorization: Token e0d3624c4719914ce16eccd2322cdbf795292a5e
+
+{
+  "status": "CLOSED"
+}
+
+###
+
+DELETE http://localhost:8000/api/advertisements/28/
+
+###
+
+POST http://localhost:8000/api/advertisements/
+Content-Type: application/json
+
+{
+  "title": "Шкаф IKEA",
+  "description": "Срочно"
+}
+
+###
+
+###
+
+DELETE http://localhost:8000/api/advertisements/2/
+Authorization: Token 9674a42b267f81bcf3691219be8e3414a537ad6d
+
+###
